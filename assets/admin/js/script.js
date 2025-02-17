@@ -160,4 +160,8 @@ $("#yes_del_category").on('click',function(){
     }
  });
 })
+
+$(document).ready(function() {   	
+    new DataTable('#example');
+    });
 });

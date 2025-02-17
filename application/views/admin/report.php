@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                        <h4 class="mb-sm-0 font-size-18">Students</h4>
+                        <h4 class="mb-sm-0 font-size-18">Report</h4>
 
                         <div class="page-title-right">
                             <ol class="breadcrumb m-0">
@@ -18,7 +18,7 @@
                                 </li>
                                 <i class="fa-solid fa-chevron-right "
                                     style="font-size: 9px;margin: 6px 5px 0px 5px;"></i>
-                                <li class="breadcrumb-item active">Students</li>
+                                <li class="breadcrumb-item active">Report</li>
                             </ol>
                         </div>
 
@@ -45,9 +45,7 @@
 
 
 
-                        <a class="btn btn-primary mb-2 f-right" href="<?php echo base_url(); ?>admin/Student/student_form"
-                            role="button"><i class="fa fa-plus"></i> Add</a>
-
+                       
 
 
                         <table id="example" class="table table-striped" style="width:100%">
@@ -58,26 +56,26 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Mob No</th>
-                                    <th>Address</th>
-                                    <th>Status</th>
+                                    <th>Total Score</th>
+                                    <th>Time</th>
                                     <!-- <th>Actions</th> -->
                                 </tr>
                             </thead>
                             <tbody>
 
                                 <?php
-                       if(!empty($students)){
+                       if(!empty($report)){
                        $count = 1;
-                       foreach($students as $val){ ?>
+                       foreach($report as $val){ ?>
                                 <tr>
                                     <td><?php echo $count;?></td>
                                     <td><?php echo $val['name'];?></td>
                                     <td><?php echo $val['email'];?></td>
                                     <td><?php echo $val['mobno'];?></td>
-                                    <td><?php echo $val['address'];?></td>
+                                    <td><?php echo $val['total_score'];?></td>
+                                    <td><?php echo $val['date_time'];?></td>
                                    
-                                    <td><?php if($val['status'] == 1){ ?> <span class="badge-success">Active</span>
-                                        <?php } else { ?> <span class="badge-danger">Inactive</span> <?php }?></td>
+                                    
                                     <td class="pb-0 pt-0 d-flex">
                                         <form class="m-0" action="<?php echo base_url();?>admin/student/edit"
                                             method="post">

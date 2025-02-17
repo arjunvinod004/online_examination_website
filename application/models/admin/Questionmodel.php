@@ -18,5 +18,7 @@ class Questionmodel extends CI_Model {
         return $this->db->delete('tbl_question');
     }
 
+    
+
 }
 ?>
