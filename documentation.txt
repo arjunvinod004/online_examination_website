@@ -1,4 +1,2 @@
-1 ) Add your country through Country menu
-2 ) Add GST OR VAT based on your country through tax menu
-3 ) When create a store.there an option for enter number of tables.After creating store automatically create table rows based on number of table within store_table
-4 ) When select country automatically populate gst or tax dropdown.
+##############################################
+

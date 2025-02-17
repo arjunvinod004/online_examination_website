@@ -1,22 +1,38 @@
-// about us function for scrolltop
-function scroll_top_about(e) {
-    $('html, body').animate({
-        scrollTop: $('#ts-features').offset().top - 30 // Scroll to #gallery minus 200px
-    }, 800); // 800ms for smooth scroll
 
+document.addEventListener("DOMContentLoaded", function () {
+    const quizDuration = 1 * 60; // 30 minutes
+
+    let base_url = "http://localhost/online_examination_website/";
+    // Check if there's a stored time in sessionStorage, otherwise start fresh
+    let timeLeft = sessionStorage.getItem("timeLeft")
+        ? parseInt(sessionStorage.getItem("timeLeft"))
+        : quizDuration;
+
+    function updateTimer() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        document.getElementById("timer").innerText = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            submitQuiz();
+        } else {
+            timeLeft--;
+            sessionStorage.setItem("timeLeft", timeLeft); // Save time left
+        }
     }
-    
-function scroll_top_gallery() {
-    $('html, body').animate({
-        scrollTop: $('#project-area').offset().top - 100 // Scroll to #gallery minus 200px
-    }, 800); // 800ms for smooth scroll
 
-}
+    // Function to submit the quiz and redirect
+    function submitQuiz() {
+        //alert("Time is up! Submitting your quiz...");
+        sessionStorage.removeItem("timeLeft");
+        window.location.href = base_url + "website/Questionnaire/result";
+    }
 
+    // Start the countdown timer
+    let timerInterval = setInterval(updateTimer, 1000);
 
-function scroll_top_contact() {
-    $('html, body').animate({
-        scrollTop: $('#footer').offset().top - 50 // Scroll to #gallery minus 200px
-    }, 800); // 800ms for smooth scroll
+    // Initial call to display timer immediately
+    updateTimer();
 
-}
+});
