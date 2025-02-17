@@ -9,6 +9,7 @@ class Student extends CI_Controller {
     public function index()
 	{
         $data['students']=$this->Studentmodel->liststudents();
+        
 		$this->load->view('admin/includes/header');
 		$this->load->view('admin/student/list',$data);
 		$this->load->view('admin/includes/footer');
@@ -39,9 +40,15 @@ class Student extends CI_Controller {
             'status'=>$this->input->post('user-status'),
         );
         // print_r($data);exit;
-        $this->Productmodel->insert($data,"tbl_student");
+
+        if($this->Studentmodel->insert($data,"tbl_student")){
+            echo json_encode(array('status' => 'success', 'redirect_url' => base_url('admin/student')));
+        } else{
+            echo json_encode(array('status' => 'error', 'message' => 'Failed to add student'));
+        }
+        
     // Redirect or display success message
-         redirect('admin/student');
+        
 }
 
 public function edit(){

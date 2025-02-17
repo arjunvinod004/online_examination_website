@@ -37,10 +37,10 @@
                     <div class="navbar-brand-box">
                         <a href="<?php echo base_url();?>admin/dashboard" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="<?php echo base_url();?>assets/admin/images/logo.png" alt="" height="">
+                                <img src="<?php echo base_url();?>assets/admin/images/emigo_logo.png" alt="" height="">
                             </span>
                             <span class="logo-lg">
-                                <img src="<?php echo base_url();?>assets/admin/images/logo.png" alt="" height="">
+                                <img src="<?php echo base_url();?>assets/admin/images/emigo_logo.png" alt="" height="">
                                 <span class="logo-txt"></span>
                             </span>
                         </a>
@@ -105,7 +105,7 @@
 
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?php echo base_url()?>admin/logout"><i
-                                    class="fa-solid fa-right-from-bracket me-1"></i> Logout</a>
+                                    class="fa-solid fa-right-from-bracket me-1"></i>Logout</a>
                         </div>
                     </div>
 
@@ -136,7 +136,7 @@
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow">
-                                <i data-feather="users"></i>
+                                <i data-feather="book"></i>
 
                                 <span data-key="t-apps">Masters</span>
                                 <i class="fa-solid fa-chevron-right " style="float: right; font-size: 9px;"></i>
@@ -146,12 +146,14 @@
                             <ul class="sub-menu" aria-expanded="false">
                                 <li>
                                     <a href="<?php echo base_url(); ?>admin/student/">
+                                    <i data-feather="users"></i>
                                         <span data-key="t-calendar">Students</span>
 
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url(); ?>admin/student/">
+                                    <a href="<?php echo base_url(); ?>admin/question/">
+                                    <i class="fa-solid fa-question mx-1"></i>
                                         <span data-key="t-calendar">Questions</span>
 
                                     </a>

@@ -13,11 +13,7 @@
     <!-- <link rel="stylesheet" href="fonts/<?php echo base_url();?>assets/admin/css/all.min.css"/> -->
     <link href="<?php echo base_url();?>assets/admin/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>assets/admin/css/crm-responsive.css" id="app-style" rel="stylesheet" type="text/css" />
-    <style>
-        iframe {
-            display:none;
-        }
-    </style>
+
 </head>
 
 <body>
@@ -52,13 +48,13 @@
                                             <div class="">
                                                 <div class="mb-4 mb-md-5 text-center">
                                                     <a href="#" class="d-block auth-logo">
-                                                        <img src="<?php echo base_url();?>assets/admin/images/logo.png" alt="" height=""> <span class="logo-txt"></span>
+                                                        <img src="<?php echo base_url();?>assets/admin/images/emigo_logo.png" alt="" height=""> <span class="logo-txt"></span>
                                                     </a>
                                                 </div>
                                                 <div class="auth-content my-auto">
                                                     <div class="text-center">
                                                         <h5 class="mb-0">Welcome Back !</h5>
-                                                        <p class="text-muted mt-2">Sign in to continue to Imelt.</p>
+                                                        <p class="text-muted mt-2">Sign in to continue to Emigo.</p>
                                                     </div>
                                                     <form action="<?php echo base_url(); ?>admin/login/userlogin" method="post">
 

@@ -15,16 +15,22 @@ class Studentmodel extends CI_Model {
 		$query = $this->db->get();
 		return $query->result_array();
     }
+    
+    public function get_students_count(){
 
-	public function update_categories($id, $data) {
-        $this->db->where('category_id', $id);
-        $this->db->update('categories', $data);
-        return true;
+    $this->db->from('tbl_student');
+    return $this->db->count_all_results();
+
     }
+	// public function update_categories($id, $data) {
+    //     $this->db->where('category_id', $id);
+    //     $this->db->update('categories', $data);
+    //     return true;
+    // }
 
-	public function delete_category($id){
-		$this->db->where('category_id', $id);
-        return $this->db->delete('categories');
-	}
+	// public function delete_category($id){
+	// 	$this->db->where('category_id', $id);
+    //     return $this->db->delete('categories');
+	// }
 }
 ?>

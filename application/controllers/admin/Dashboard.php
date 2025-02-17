@@ -18,10 +18,10 @@ class Dashboard extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
-	
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('admin/Studentmodel');
 		require('Common.php');
 		if (!$this->session->userdata('login_status')) {
 			redirect(login);
@@ -29,8 +29,9 @@ class Dashboard extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['Studentscount']=$this->Studentmodel->get_students_count();
+		// print_r($data['Studentscount']);
 		$data['Clientscount']=10;
-		$data['completedOrder']=10;
 		$this->load->view('admin/includes/header');
 		$this->load->view('admin/dashboard',$data);
 		$this->load->view('admin/includes/footer');

@@ -3556,16 +3556,16 @@ fieldset:disabled .btn {
 
 .btn-primary {
     color: #fff;
- background-color: #7ec322;
-    border-color: #7ec322;
+ background-color: #6266c4;
+    border-color: #6266c4;
     /* background-color: #5156be;
     border-color: #5156be */
 }
 
 .btn-primary:hover {
     color: #fff;
-    background-color: #6a9137;
-    border-color: #7ec322;
+    background-color: #6266c4;
+    border-color: #6266c4;
     /* background-color: #4549a2;
     border-color: #414598 */
 }
@@ -3585,8 +3585,8 @@ fieldset:disabled .btn {
 .btn-primary:active,
 .show>.btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #7dab3f;
-    border-color: #97cb52;
+    background-color: #6266c4;
+    border-color: #6266c4;
     /* background-color: #414598;
     border-color: #3d418f */
 }

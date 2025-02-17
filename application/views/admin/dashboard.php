@@ -45,7 +45,7 @@
                                 <a href="<?php echo base_url('admin/store'); ?>"><div class="card-body bg-b-purple">
                                     <div class="row align-items-center">
                                         <div class="col-8">
-                                            <span class="text-white mb-3 d-block text-truncate">Stores</span>
+                                            <span class="text-white mb-3 d-block text-truncate">Exam Sheet</span>
                                             <h4 class="mb-3">
                                                 <span class="text-white"><?php if(isset($Clientscount)) { echo $Clientscount; } ?></span>
                                             </h4>
@@ -68,9 +68,9 @@
                                 <a href="<?php echo base_url('admin/user'); ?>"><div class="card-body bg-b-secondary">
                                     <div class="row align-items-center">
                                         <div class="col-8">
-                                            <span class="text-white mb-3 d-block text-truncate">Users</span>
+                                            <span class="text-white mb-3 d-block text-truncate">Students</span>
                                             <h4 class="mb-3">
-                                                <span class="text-white"><?php if(isset($Clientscount)) { echo $Clientscount; } ?></span>
+                                                <span class="text-white"><?php if(isset($Studentscount)) { echo $Studentscount; } ?></span>
                                             </h4>
                                         </div>
                                         <div class="col-4 icon">
