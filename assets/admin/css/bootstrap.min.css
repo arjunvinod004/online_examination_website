@@ -9717,8 +9717,8 @@ fieldset:disabled .btn {
 
 .bg-primary {
     --bs-bg-opacity: 1;
-    background-color: rgb(140 198 63) !important;
-    /* background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important */
+    /* background-color: rgb(140 198 63) !important; */
+     background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important 
 }
 
 .bg-secondary {

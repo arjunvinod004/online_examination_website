@@ -31,49 +31,22 @@ class Login extends CI_Controller {
 	{
         $this->form_validation->set_error_delimiters('', ''); 
 		$this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('login[password]', 'Password', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
 		if ($this->form_validation->run() == FALSE)
         {
             $this->load->view('admin/login');
-            
         }
         else
         {
-            //exit;
             $data=$this->Loginmodel->checkLogin(); //print_r($data);exit;
 			if($data!="")
 			{
-				$loginName=$data[0]['Name'];
-				// $store_id=$data[0]['store_id']; //login user store id
-				$loginusername=$data[0]['userName'];//Username of current login user
-			 	// $loginid=$data[0]['userid'];//Id of current login user
-				// $roleid=$data[0]['userroleid'];//Role of current login user
-				//$rolename=$data[0]['rolename'];
+			 	$loginName=$data->Name;
+				$loginusername=$data->userName;//Username of current login user
 				$this->session->set_userdata('loginName',$loginName);
-				// $this->session->set_userdata('loginName',$loginName);
-				// $this->session->set_userdata('logged_in_store_id',$store_id);
-				// $this->session->set_userdata('loginid',$loginid);
-				// $this->session->set_userdata('roleid',$roleid);
-				//$this->session->set_userdata('rolename',$rolename);
 				$this->session->set_userdata('login_status',true);
-			//	$pswdstatus=$data[0]['pswdstatus'];
-				$mail			=	$_POST['username'];
-				$password		= 	$_POST['login']['password'];
-
-				// print_r($data); exit;
-				if(isset($_POST["remember"]))
-				{								
-					$hour = time() + 3600 * 24 * 30;
-					setcookie('adminemail', $mail, $hour);
-					setcookie('adminpassword', $password, $hour);
-					setcookie('adminremember',$_POST["remember"], $hour);
-				}
-				if($data[0]['store_id']==0){   //if login user is admin redirected to admin dashboard otherwise owner dashboard
-					redirect('admin/dashboard');
-				}else{
-					redirect('owner/dashboard');
-				}
-
+				$this->session->set_userdata('loginid',$data->userid);
+				redirect('admin/dashboard');
 			}
 			else
 			{

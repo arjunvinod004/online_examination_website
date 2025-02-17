@@ -1,8 +1,10 @@
-var base_url = 'http://localhost/online_examination_website/';
-// alert(base_url);
 // 1. validation add user
+// 2. title
 
 $(document).ready(function () {
+
+    var base_url = 'http://localhost/online_examination_website/';
+
     // 1. validation add user
     $('#UserForm').on('submit', function (e) {
         // alert('hii')
@@ -46,7 +48,7 @@ $(document).ready(function () {
         if (isValid) {
             // alert('hii')
             $.ajax({
-                url: base_url + 'admin/Gallery/add',  // Replace with your controller method
+                url: base_url + 'admin/Student/add',  // Replace with your controller method
                 type: 'POST',
                 data: $('#UserForm').serialize(),
                 success: function (response) {
@@ -59,9 +61,8 @@ $(document).ready(function () {
             });
         }
     });
-
     //end
 
-   
+   // 2. title
     
 });

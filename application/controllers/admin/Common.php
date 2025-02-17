@@ -1,6 +1,6 @@
 <?php
 	$this->load->model('admin/Commonmodel');
-    $this->load->model('admin/Rolemodel');
+    
 		if ($this->session->userdata('loginid')!=NULL)
 	    {
 		 $this->loginID=$this->session->userdata('loginid');	

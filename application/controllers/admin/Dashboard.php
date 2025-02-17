@@ -31,7 +31,6 @@ class Dashboard extends CI_Controller {
 	{
 		$data['Clientscount']=10;
 		$data['completedOrder']=10;
-		//print_r($data['stores']);exit;
 		$this->load->view('admin/includes/header');
 		$this->load->view('admin/dashboard',$data);
 		$this->load->view('admin/includes/footer');

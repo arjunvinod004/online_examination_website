@@ -60,7 +60,7 @@
                                                         <h5 class="mb-0">Welcome Back !</h5>
                                                         <p class="text-muted mt-2">Sign in to continue to Imelt.</p>
                                                     </div>
-                                                    <form action="<?php echo base_url(); ?>admin/login/userlogin" method="post" class="needs-validation" novalidate="">
+                                                    <form action="<?php echo base_url(); ?>admin/login/userlogin" method="post">
 
 
 
@@ -89,7 +89,7 @@
                                                             <div class="mb-2">
                                                                 <div class="d-flex align-items-start">
                                                                     <div class="flex-grow-1">
-                                                                        <label class="form-label">Password</label>
+                                                                        <label class="form-label"></label>
                                                                     </div>
                                                                     <div class="flex-shrink-0">
                                                                         <div class="">
@@ -97,13 +97,12 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="input-group">
-                                                                    <input class="form-control" type="password" name="login[password]" value="<?php echo set_value('login[password]'); ?>">
-                                                                  
-                                                                </div>
+                                                                <div class="mb-2">
+                                                                <label class="form-label">Password</label>
+                                                                <input class="form-control" name="password" type="text" value="<?php echo set_value('password'); ?>" placeholder="Enter your password">
                                                             </div>
-                                                            <?php if(form_error('login[password]')){ ?>
-<div class="errormsg mb-2" role="alert"><?php echo form_error('login[password]'); ?></div>
+                                                            <?php if(form_error('password')){ ?>
+<div class="errormsg mb-2" role="alert"><?php echo form_error('password'); ?></div>
                   <?php } ?>
                                                             <div class="mb-3">
                                                                 <button id="BtnLogin" class="btn btn-primary w-100 waves-effect waves-light" type="submit">Login</button>

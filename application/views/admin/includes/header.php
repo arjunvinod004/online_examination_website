@@ -97,7 +97,7 @@
                             aria-expanded="false">
                             <img class="rounded-circle header-profile-user"
                                 src="<?php echo base_url();?>assets/admin/images/avatar-1.jpg" alt="Header Avatar">
-                            <span class="d-none d-xl-inline-block ms-1 fw-medium">imelt Admin</span>
+                            <span class="d-none d-xl-inline-block ms-1 fw-medium">Emigo Admin</span>
                             <i class="fa-solid fa-chevron-down" style="font-size: 9px;"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-end">
@@ -138,15 +138,21 @@
                             <a href="javascript: void(0);" class="has-arrow">
                                 <i data-feather="users"></i>
 
-                                <span data-key="t-apps">User</span>
+                                <span data-key="t-apps">Masters</span>
                                 <i class="fa-solid fa-chevron-right " style="float: right; font-size: 9px;"></i>
                             </a>
 
 
                             <ul class="sub-menu" aria-expanded="false">
                                 <li>
-                                    <a href="<?php echo base_url(); ?>admin/gallery/">
-                                        <span data-key="t-calendar">Users</span>
+                                    <a href="<?php echo base_url(); ?>admin/student/">
+                                        <span data-key="t-calendar">Students</span>
+
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo base_url(); ?>admin/student/">
+                                        <span data-key="t-calendar">Questions</span>
 
                                     </a>
                                 </li>
