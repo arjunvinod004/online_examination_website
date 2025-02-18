@@ -16,5 +16,17 @@ class Questionmodel extends CI_Model {
     public function get_options($question_id) {
         return $this->db->get_where('tbl_question', ['id' => $question_id])->result();
     }
+    public function insert_questionaire_answers($answers){
+        $this->db->insert('tbl_exam_sheet' , $answers );
+    }
+    public function update_total_score($total_marks){
+        $user_id = $this->session->userdata('user_id');
+        $data = array(
+            'total_score' => $total_marks,
+            'date_time' => date('Y-m-d H:i:s')
+        );
+        $this->db->where('id ', $user_id);
+        $this->db->update('tbl_student', $data);
+    }
 }
 ?>

@@ -10,7 +10,7 @@ class Questionnaire extends CI_Controller {
 
     public function index($question_no = 1) {
         $question = $this->Questionmodel->get_question($question_no);
-        if (!$question) {
+        if (!$question || $question_no == 21 ) {
             redirect('website/Questionnaire/result'); // Redirect to result page if no more questions
         }
         $options = $this->Questionmodel->get_options($question->id);
@@ -23,6 +23,17 @@ class Questionnaire extends CI_Controller {
     public function next() {
         $question_id = $this->input->post('question_id');
         $selected_option = $this->input->post('option'); 
+
+        $answers = array(
+            'student_id' =>  $this->session->userdata('user_id') ,
+            'question_id' => $question_id,
+            'answer_id' => $selected_option,
+            'date' => date('Y-m-d'),
+            'time' => date('H:i:s'),
+            'remarks' => 'remarks',
+        );
+
+        $this->Questionmodel->insert_questionaire_answers($answers);
 
         $question = $this->Questionmodel->get_question_by_id($question_id); 
 
@@ -40,6 +51,7 @@ class Questionnaire extends CI_Controller {
         $total_marks = $this->session->userdata('total_marks') ?? 0;
         $this->load->view('website/header');
         $this->load->view('website/result', ['total_marks' => $total_marks]);
+        $this->Questionmodel->update_total_score($total_marks);
         $this->load->view('website/footer');
     }
 
