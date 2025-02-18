@@ -15,10 +15,11 @@
 
 
 
-           
+
 
             <div class="result-page_success">
-                <h2>Your Total Score: <?php echo $total_marks; ?> / 20</h2>
+                <h2>Your Total Score: <?php echo $total_marks; ?> / 50 </h2>
+                <p><?php echo $exam_result; ?>
             </div>
 
 

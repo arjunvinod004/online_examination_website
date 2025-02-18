@@ -45,20 +45,20 @@
 
 
 
-                       
+
 
 
                         <table id="example" class="table table-striped" style="width:100%">
                             <thead style="background: #e5e5e5;">
                                 <tr>
                                     <th>No</th>
-                                    
+
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Mob No</th>
                                     <th>Total Score</th>
                                     <th>Time</th>
-                                    <!-- <th>Actions</th> -->
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -74,8 +74,8 @@
                                     <td><?php echo $val['mobno'];?></td>
                                     <td><?php echo $val['total_score'];?></td>
                                     <td><?php echo $val['date_time'];?></td>
-                                   
-                                    
+
+
                                     <td class="pb-0 pt-0 d-flex">
                                         <form class="m-0" action="<?php echo base_url();?>admin/student/edit"
                                             method="post">
@@ -86,15 +86,12 @@
                                                     class="fa fa-edit"></i></button> -->
                                         </form>
 
-                                        <!-- <a class="btn tblDelBtn pl-0 pr-0 del_category" type="button"
-                                            data-bs-toggle="modal" data-id="<?php echo $val['id']; ?>"
-                                            data-bs-original-title="Delete Category" data-bs-target="#exampleModal"><i
-                                                class="fa fa-trash"></i></a> -->
+                                        <a href="<?php echo base_url(); ?>admin/export/export_to_excel/<?php echo $val['id']; ?>"
+                                            target="_blank" class="btn btn-primary mt-2 mb-2" type="button">Download
+                                            excel</a>
 
 
-                                        <!-- <a data-bs-toggle="modal" data-bs-target="#emp_informations" class="btn tblLogBtn pl-0 pr-0" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Additional Informations">
-                        <i class="fa-solid fa-circle-plus"></i>
-                    </a> -->
+
                                     </td>
                                 </tr>
                                 <?php $count++; }} ?>
@@ -102,7 +99,7 @@
 
 
                             </tbody>
-                           
+
                         </table>
 
 
@@ -168,5 +165,3 @@
 
 
         </div>
-
-        

@@ -15,4 +15,3 @@
 </head>
 
 <body>
-    <a href="<?php echo base_url('website/Questionnaire/clear_session'); ?>">Clear Session</a>

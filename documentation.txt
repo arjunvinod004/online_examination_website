@@ -1,2 +1,4 @@
 ##############################################
+1.Create scanner for scan and go to the login page    - Questionnaire->generate_login_qr()
 
+2.Display random questions and 

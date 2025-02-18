@@ -19,11 +19,12 @@ class Questionmodel extends CI_Model {
     public function insert_questionaire_answers($answers){
         $this->db->insert('tbl_exam_sheet' , $answers );
     }
-    public function update_total_score($total_marks){
+    public function update_total_score_and_exam_status($total_marks){
         $user_id = $this->session->userdata('user_id');
         $data = array(
             'total_score' => $total_marks,
-            'date_time' => date('Y-m-d H:i:s')
+            'date_time' => date('Y-m-d H:i:s'),
+            'is_exam' => 1
         );
         $this->db->where('id ', $user_id);
         $this->db->update('tbl_student', $data);
