@@ -22,6 +22,17 @@ class Studentmodel extends CI_Model {
     return $this->db->count_all_results();
 
     }
+
+    public function get_student_report(){
+        $this->db->select('*');
+		$this->db->from('tbl_student');
+        $this->db->where('is_exam',1);
+		$this->db->order_by("id", "desc");
+		$query = $this->db->get();
+		return $query->result_array();
+
+    }
+
 	// public function update_categories($id, $data) {
     //     $this->db->where('category_id', $id);
     //     $this->db->update('categories', $data);

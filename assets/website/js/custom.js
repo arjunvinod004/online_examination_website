@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const quizDuration = 1 * 60; // 30 minutes
+    const quizDuration = 2 * 60; // 30 minutes
 
     let base_url = "http://localhost/online_examination_website/";
     // Check if there's a stored time in sessionStorage, otherwise start fresh
@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Start the countdown timer
     let timerInterval = setInterval(updateTimer, 1000);
-
     // Initial call to display timer immediately
     updateTimer();
 

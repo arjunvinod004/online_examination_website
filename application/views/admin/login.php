@@ -109,7 +109,7 @@
                 
                                                 </div>
                                                 <div class="mt-4 mt-md-5 text-center">
-                                                    <p class="mb-0">©2025 Imelt . developed by <a href="https://coinoneglobal.com/">Coinone</a>
+                                                    <p class="mb-0">©2025 Emigo . developed by <a href="https://coinoneglobal.com/">Coinone</a>
                                                     </p>
                                                 </div>
                                             </div>
