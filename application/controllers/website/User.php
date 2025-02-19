@@ -6,6 +6,7 @@ class User extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('website/Usermodel');
+        $this->load->model('website/Questionmodel');
         $this->load->library('form_validation');
         $this->load->library('session');
     }
@@ -46,6 +47,8 @@ class User extends CI_Controller {
                 {
                     $this->session->set_userdata('user_id', $user->id);
                     $this->session->set_userdata('username', $user->name);
+                    $random_question_id_array = $this->Questionmodel->get_random_questions();
+                    $this->session->set_userdata('random_question_ids', $random_question_id_array);
                     redirect('website/Questionnaire');
                 }
             } 

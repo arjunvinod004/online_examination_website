@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    const quizDuration = 5 * 60; // 30 minutes
+    const quizDuration = 30 * 60; // 30 minutes
 
     let base_url = "http://localhost/online_examination_website/";
     // Check if there's a stored time in sessionStorage, otherwise start fresh

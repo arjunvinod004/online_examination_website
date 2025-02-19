@@ -29,5 +29,20 @@ class Questionmodel extends CI_Model {
         $this->db->where('id ', $user_id);
         $this->db->update('tbl_student', $data);
     }
+
+/*************  ✨ Codeium Command ⭐  *************/
+    /**
+     * Fetches a limited number of random questions from the database.
+
+/******  aced7dd4-219e-42d7-8b2d-4d868e35c7a7  *******/
+    public function get_random_questions() {
+        $this->db->distinct();
+        $this->db->select('id');
+        $this->db->from('tbl_question');
+        $this->db->order_by('RAND()'); // Fetch random questions
+        $this->db->limit(10); // Limit number of questions
+        $query = $this->db->get();
+        return $query->result();
+    }
 }
 ?>

@@ -2,15 +2,14 @@
     <div>
         <div>
             <div class="logo">
-                <img src="<?php echo base_url(); ?>assets/website/images/logo.png" width="260px" height="130px">
+                <img src="<?php echo base_url(); ?>assets/website/images/logo.png" width="150px" height="80px">
             </div>
 
 
 
 
-
-            <div class="result-page_success">
-                <h2>You already attend this exam</h2>
+            <div class="result-page_success already_attend">
+                <p>You already attend this exam</p>
             </div>
 
 

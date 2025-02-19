@@ -2,7 +2,7 @@
     <div>
         <div>
             <div class="logo">
-                <img src="<?php echo base_url(); ?>assets/website/images/logo.png" width="260px" height="130px">
+                <img src="<?php echo base_url(); ?>assets/website/images/logo.png" width="150px" height="80px">
             </div>
             <div class="signup">
                 <p>Login</p>

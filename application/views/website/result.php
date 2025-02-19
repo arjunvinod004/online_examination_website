@@ -2,7 +2,7 @@
     <div>
         <div>
             <div class="logo">
-                <img src="<?php echo base_url(); ?>assets/website/images/logo.png" width="260px" height="130px">
+                <img src="<?php echo base_url(); ?>assets/website/images/logo.png" width="150px" height="80px">
             </div>
 
 
@@ -18,7 +18,7 @@
 
 
             <div class="result-page_success">
-                <h2>Your Total Score: <?php echo $total_marks; ?> / 50 </h2>
+                <h3>Total Score: <?php echo $total_marks; ?>/50</h3>
                 <p><?php echo $exam_result; ?>
             </div>
 

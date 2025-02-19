@@ -2,7 +2,13 @@
     <div>
         <div>
             <div class="logo">
-                <img src="<?php echo base_url(); ?>assets/website/images/logo.png" width="260px" height="130px">
+                <img src="<?php echo base_url(); ?>assets/website/images/logo.png" width="150px" height="80px">
+            </div>
+
+            <div class="exam_details">
+                <p class="exam_details_name">Online Exam </p>
+                <p class="exam_details_duration">Duration : 30 minutes</p>
+                <p class="exam_details_mark">Total Mark : 50</p>
             </div>
 
 
@@ -17,30 +23,45 @@
                 rel="noopener noreferrer">Generate QR</a> -->
 
 
-            <h2>Question <?php echo $question_no; ?>: <?php echo $question->question_name; ?></h2>
+            <div class="question_container">
+                <p class="question_container_question">Question <?php echo $question_no + 1; ?></p>
+                <p class="question_container_name"><?php echo $question->question_name; ?></p>
+            </div>
 
-            <form method="POST" action="<?php echo base_url('website/Questionnaire/next'); ?>">
-                <!-- <?php foreach ($options as $option): ?> -->
-                <input type="radio" name="option" value="<?php echo $option->option1; ?>" required>
-                <?php echo $option->option1; ?><br>
-                <input type="radio" name="option" value="<?php echo $option->option2; ?>" required>
-                <?php echo $option->option2; ?><br>
-                <input type="radio" name="option" value="<?php echo $option->option3; ?>" required>
-                <?php echo $option->option3; ?><br>
-                <input type="radio" name="option" value="<?php echo $option->option4; ?>" required>
-                <?php echo $option->option4; ?><br>
 
-                <br>
+            <div class="answers_container">
+                <form method="POST" action="<?php echo base_url('website/Questionnaire/next'); ?>">
+                    <!-- <?php foreach ($options as $option): ?> -->
+                    <div class="answers_container_option">
+                        <input type="radio" name="option" value="<?php echo $option->option1; ?>" required>
+                        <?php echo $option->option1; ?>
+                    </div>
+                    <div class="answers_container_option">
+                        <input type="radio" name="option" value="<?php echo $option->option2; ?>" required>
+                        <?php echo $option->option2; ?>
+                    </div>
+                    <div class="answers_container_option">
+                        <input type="radio" name="option" value="<?php echo $option->option3; ?>" required>
+                        <?php echo $option->option3; ?>
+                    </div>
+                    <div class="answers_container_option">
+                        <input type="radio" name="option" value="<?php echo $option->option4; ?>" required>
+                        <?php echo $option->option4; ?>
+                    </div>
 
-                <p>Ans : <?php echo $option->answer; ?></p>
+                    <br>
 
-                <!-- <?php endforeach; ?> -->
+                    <p>Ans : <?php echo $option->answer; ?></p>
 
-                <input type="hidden" name="question_id" value="<?php echo $question->id; ?>">
-                <input type="hidden" name="question_no" value="<?php echo $question_no; ?>">
+                    <!-- <?php endforeach; ?> -->
 
-                <button type="submit">Next</button>
-            </form>
+                    <input type="hidden" name="question_id" value="<?php echo $question->id; ?>">
+                    <input type="hidden" name="question_no" value="<?php echo $question_no; ?>">
+
+                    <button type="submit">Next</button>
+                </form>
+
+            </div>
 
 
 

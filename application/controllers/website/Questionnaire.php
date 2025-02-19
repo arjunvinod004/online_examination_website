@@ -8,10 +8,13 @@ class Questionnaire extends CI_Controller {
         $this->load->helper('url');
     }
 
-    public function index($question_no = 1) {   
-        $user_id =  $this->session->userdata('user_id');      
-        $question = $this->Questionmodel->get_question($question_no);
-        if (!$question || $question_no == 26 ) {
+    public function index($question_no = 0) {   
+        // $user_id =  $this->session->userdata('user_id');
+        $random_questions = $this->session->userdata('random_question_ids'); print_r($random_questions);exit;
+
+        $question = $this->Questionmodel->get_question($random_questions[$question_no]->id);
+        //echo $random_question_id_array[$question_no]->id;
+        if (!$question || $question_no == 10 ) {
             redirect('website/Questionnaire/result'); // Redirect to result page if no more questions
         }
         $options = $this->Questionmodel->get_options($question->id);
@@ -64,10 +67,12 @@ class Questionnaire extends CI_Controller {
         $passing_percentage = 72;
         $passing_score = $this->calculate_passing_score($total_mark_out_off, $passing_percentage);
 
-        if ($total_marks >= $passing_score) {
-            $data['exam_result'] = 'Passed with ' . $total_marks . ' marks out of ' . $total_mark_out_off . ' marks';
-        } else {
-            $data['exam_result'] = 'Failed with ' . $total_marks . ' marks out of ' . $total_mark_out_off . ' marks';
+        if($total_marks >= $passing_score) 
+        {
+            $data['exam_result'] = 'Congratulations! Your exam has been successfully completed, and you have passed with a total score of <b>' . $total_marks . ' </b> out of <b>50</b>. Thank you!';
+        } else 
+        {
+            $data['exam_result'] = 'Unfortunately, your exam has been completed, and you did not pass. Your total score is <b>' . $total_marks . '</b> out of <b>50</b>. Thank you for your effort, and we encourage you to try again.';
         }
         $data['total_marks'] = $total_marks;
 
@@ -91,5 +96,23 @@ class Questionnaire extends CI_Controller {
 		 $codeContents = base_url() . 'website/User/login_form/';
 		 QRcode::png($codeContents, false, QR_ECLEVEL_L, 10, 2);
 	}
+
+    public function get_random_questions(){
+        $quest = $this->Questionmodel->get_random_questions();//print_r($quest);
+        foreach($quest as $key => $q){
+            echo $key .'-'. $q->id.'<br>';  
+        }
+    }
+
+/*************  ✨ Codeium Command ⭐  *************/
+    /**
+     * This function is intended to handle random operations or logic.
+     * The specific behavior and implementation details are to be defined.
+     */
+
+/******  75ce6513-5417-4aec-aabc-201b66501990  *******/
+    
+    
+    
 }
 ?>

@@ -49,6 +49,32 @@ body {
     border: 5px;
 }
 
+.exam_details p {
+    text-align: center;
+}
+
+.exam_details_name {
+    font-size: 30px;
+    font-weight: bold;
+    color: #5a5b5b;
+}
+
+.exam_details_duration {
+    font-size: 20px;
+    font-weight: normal;
+    color: #5a5b5b;
+}
+
+.question_container_question {}
+
+.question_container_name {}
+
+.exam_details_mark {
+    font-size: 20px;
+    font-weight: normal;
+    color: #5a5b5b;
+}
+
 .login-page {
     background: white;
     border-radius: 40px;
@@ -82,13 +108,43 @@ body {
 
 .question-page h2 {
     align-items: center;
-    color: rgb(89 90 90);
+    color: rgb(255, 255, 255);
     margin-top: 05px;
     margin-bottom: 10px;
-    background: #ebebeb;
-    font-size: 18px;
+    background: #086db0;
+    font-size: 20px;
     line-height: 20px;
-    padding: 10px;
+    padding: 18px;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.question_container {
+    background: #f2f2f2;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.question_container_question {
+    font-weight: bold;
+    color: #5a5b5b;
+}
+
+.question_container_name {
+    font-size: 18px;
+}
+
+.answers_container {
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.answers_container_option {
+    padding: 5px 5px 5px 10px;
+    background: #dfdfdf;
+    margin-top: 5px;
     border-radius: 15px;
 }
 
@@ -107,6 +163,14 @@ body {
     text-align: center;
 }
 
+.result-page_success h3 {
+    font-weight: bold;
+}
+
+.result-page_success p {
+    font-size: 18px;
+}
+
 .powered_by {
     text-align: center;
     margin-top: 05px;
@@ -115,7 +179,7 @@ body {
 .powered_by p {
     color: rgb(170, 170, 170);
     font-weight: regular;
-    font-size: 10px;
+    font-size: 15px;
     text-align: center;
 }
 

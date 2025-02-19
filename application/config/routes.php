@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'website/Questionnaire';
 $route['website/Questionnaire/index/(:num)'] = 'website/Questionnaire/index/$1';
-$route['website/Questionnaire'] = 'website/Questionnaire/index/1';
+$route['website/Questionnaire'] = 'website/Questionnaire/index/0';
 $route['website/Questionnaire/result'] = 'website/Questionnaire/result';
 $route['products'] = 'website/products/index';
 $route['cart'] = 'website/Cartcontroller/index';
